@@ -1,103 +1,99 @@
 # 🌍 WorldTour — Documentation Technique WordPress (Blocs Gutenberg)
 
 **WorldTour** est un site WordPress réalisé pour une **agence de voyage nationale**.  
-Le site a été conçu **exclusivement avec les blocs natifs WordPress (éditeur Gutenberg)**, **sans extensions supplémentaires**, afin de garantir simplicité, stabilité et compatibilité maximale.
+Le site a été conçu **exclusivement avec les blocs natifs WordPress (éditeur Gutenberg)**, **sans aucune extension**, afin de garantir simplicité, stabilité et compatibilité avec WordPress.com.
 
 - 📆 **Date** : Avril 2025  
-- 🏢 **Réalisation** : ESN Stesio  
+- 🏢 **Réalisation** :Marlon and Esteban  
 - 🌐 **Site en ligne** : https://blog27143.wordpress.com/
 
 ---
 
 ## 📚 Sommaire
 
-- Présentation du projet  
-- Installation de WordPress  
-- Utilisation des blocs WordPress  
-- Structure du site  
-- Navigation et menus  
-- Gestion des rôles  
-- Ajouter un voyage ou une antenne  
-- Support et contact  
+- [Présentation du projet](#-présentation-du-projet)
+- [Installation de WordPress](#️-installation-de-wordpress)
+  - [Installation en ligne (WordPress.com)](#installation-en-ligne-wordpresscom)
+  - [Installation en local (srv-lamp)](#installation-en-local-srv-lamp)
+- [Utilisation des blocs WordPress](#-utilisation-des-blocs-wordpress)
+- [Structure du site](#-structure-du-site)
+- [Navigation et menus](#-navigation-et-menus)
+- [Gestion des rôles](#-gestion-des-rôles)
+- [Ajouter un voyage ou une antenne](#-ajouter-un-voyage-ou-une-antenne)
+- [Support et contact](#-support-et-contact)
 
 ---
 
 ## 🎯 Présentation du projet
 
-Le projet **WorldTour** vise à présenter :
-- l’agence nationale,
-- ses antennes locales,
-- les voyages proposés,
-via un site WordPress clair, structuré et facilement maintenable.
+Le projet **WorldTour** consiste à créer et administrer un site WordPress pour une agence de voyage nationale.
 
-✅ Le site a été réalisé **sans plugins fonctionnels**, uniquement à l’aide :
-- de l’éditeur **Gutenberg**,
-- des **blocs WordPress par défaut**,
-- et des fonctionnalités natives de WordPress.com.
+Le site permet de :
+- présenter l’agence,
+- afficher les antennes locales,
+- mettre en avant les voyages proposés,
+- faciliter la prise de contact.
+
+✅ Le site est conçu **sans plugins**, uniquement avec :
+- l’éditeur **Gutenberg**,
+- les **blocs WordPress natifs**,
+- les fonctionnalités standard de WordPress.com.
 
 ---
 
 ## ⚙️ Installation de WordPress
 
-Le projet est disponible :
-- **en ligne** via WordPress.com (site public),
-- **en local** sur un serveur `srv-lamp` pour les tests.
-
-### Prérequis
-
-| Élément | Détail |
-|------|------|
-| Navigateur | Chrome / Firefox / Edge |
-| Serveur local | Apache + PHP + MySQL |
-| Accès Internet | Requis pour WordPress.com |
-| Outils | WinSCP, PuTTY |
+Le projet existe sous deux formes :
+- **Version en ligne** (site officiel)
+- **Version locale** (tests et modifications)
 
 ---
 
 ### Installation en ligne (WordPress.com)
 
-🌐 Site : https://blog27143.wordpress.com/
+🌐 Site officiel : https://blog27143.wordpress.com/
 
-1. Créer un compte sur https://wordpress.com  
-2. Choisir le **plan gratuit**  
-3. Créer le site *WorldTour*  
-4. Accéder au tableau de bord  
+Étapes :
+1. Création du site sur WordPress.com
+2. Choix du plan gratuit
+3. Configuration du nom et des pages
+4. Accès au tableau de bord
 
-> 💡 Le site en ligne sert de **vitrine officielle**.
+> 💡 Le site en ligne sert de **vitrine publique**.  
+> Les tests sont effectués en local avant mise en production.
 
 ---
 
 ### Installation en local (srv-lamp)
 
+- Serveur : Apache / PHP / MySQL
 - Accès : `http://srv-lamp/~identifiant/`
 - Base de données : `identifiant_wp`
-- Serveur BDD : `localhost`
 
 ⚠️ **Important**  
-Le mot de passe administrateur WordPress ne peut **pas être réinitialisé**.
+Le mot de passe administrateur WordPress **ne peut pas être réinitialisé**.  
+Il doit être sauvegardé dès la création du site.
 
 ---
 
-## 🧱 Utilisation des blocs WordPress (Gutenberg)
+## 🧱 Utilisation des blocs WordPress
 
-Le site utilise **uniquement les blocs natifs** :
+Le site WorldTour utilise **uniquement les blocs natifs** fournis par WordPress.
 
 ### Blocs utilisés
 
-| Bloc WordPress | Utilisation |
-|-------------|-------------|
-| Paragraphe | Textes descriptifs |
-| Titre | Hiérarchisation du contenu |
-| Image | Visuels des voyages / antennes |
-| Galerie | Photos des destinations |
-| Colonnes | Mise en page structurée |
-| Boutons | Liens vers voyages / contact |
-| Liste | Services, employés, départs |
-| Tableau | Tarifs des voyages |
-| Formulaire de contact | Bloc WordPress.com |
+- **Titre** : hiérarchisation du contenu
+- **Paragraphe** : textes descriptifs
+- **Image** : visuels antennes et voyages
+- **Galerie** : photos des destinations
+- **Colonnes** : mise en page structurée
+- **Tableau** : grilles tarifaires
+- **Liste** : employés, départs, services
+- **Boutons** : navigation et appels à l’action
+- **Formulaire de contact** : bloc WordPress.com
 
-✅ Aucun plugin requis  
-✅ Interface stable et légère  
+✅ Aucun plugin externe  
+✅ Site léger et stable  
 ✅ Compatible WordPress.com
 
 ---
@@ -121,32 +117,32 @@ Le site utilise **uniquement les blocs natifs** :
 
 ### Pages Antennes
 
-Chaque antenne comprend :
-- une présentation de la ville,
-- les responsables,
-- les employés (par rôle),
-- une mise en page en blocs colonnes & images.
+Chaque page antenne contient :
+- présentation de la ville,
+- responsables,
+- employés (par rôle),
+- images et mise en page en colonnes.
 
 ---
 
 ### Pages Voyages
 
-Chaque page voyage contient :
-- une présentation complète,
-- une galerie photo (bloc Galerie),
-- un **tableau de tarifs** (bloc Tableau),
-- les durées (4j / 7j / 15j),
-- les lieux de départ,
-- un formulaire de contact.
+Chaque page voyage inclut :
+- descriptif détaillé,
+- galerie photo (min. 4 images),
+- tableau de tarifs (4j / 7j / 15j),
+- lieux de départ,
+- formulaire de contact.
 
 ---
 
-## 🧭 Menus de navigation
+## 🧭 Navigation et menus
 
 Le menu principal est configuré via :
 
-**Apparence → Menus**
+**Tableau de bord → Apparence → Menus**
 
+Il contient :
 - Accueil
 - Nos Antennes (menu déroulant)
 - Nos Voyages (menu déroulant)
@@ -156,12 +152,12 @@ Le menu principal est configuré via :
 
 ## 👥 Gestion des rôles
 
-| Rôle | Accès |
+| Rôle | Droits |
 |----|----|
 | Administrateur | Gestion complète du site |
 | Éditeur WorldTour | Modification du contenu |
 
-Création d’un compte :
+Création d’un utilisateur :
 `Tableau de bord → Utilisateurs → Ajouter`
 
 ---
@@ -170,21 +166,18 @@ Création d’un compte :
 
 ### Ajouter un voyage
 
-1. Dupliquer un modèle de page existant  
-2. Modifier le contenu avec les blocs :
-   - Titre
-   - Paragraphe
-   - Galerie
-   - Tableau
-3. Associer la page à **Nos Voyages**
-4. Publier
+1. Dupliquer une page voyage existante
+2. Modifier le contenu via les blocs
+3. Ajuster les tarifs et images
+4. Associer la page à **Nos Voyages**
+5. Publier
 
 ---
 
 ### Ajouter une antenne
 
-1. Dupliquer une page antenne existante  
-2. Modifier les informations (ville, employés)  
+1. Dupliquer une page antenne
+2. Modifier les informations (ville, employés)
 3. Ajouter au menu **Nos Antennes**
 4. Publier
 
@@ -193,8 +186,8 @@ Création d’un compte :
 ## 🛟 Support et contact
 
 - 📧 **Contact ESN Stesio** : f.bravais@gmail.com  
-- 📚 Documentation WordPress : https://fr.wordpress.org/support/  
+- 📚 Support WordPress : https://fr.wordpress.org/support/
 
 ---
 
-_Documentation officielle — Projet WorldTour_ by Reynaud Marlon and Guillermin Egido Esteban
+_Documentation officielle — Projet WorldTour — Avril 2025_by Marlon and Esteban
