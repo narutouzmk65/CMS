@@ -1,8 +1,7 @@
-# 🌍 WorldTour — Documentation Technique CMS WordPress
+# 🌍 WorldTour — Documentation Technique WordPress (Blocs Gutenberg)
 
-**WorldTour**  
-Agence de voyage nationale  
-Documentation technique du site WordPress  
+**WorldTour** est un site WordPress réalisé pour une **agence de voyage nationale**.  
+Le site a été conçu **exclusivement avec les blocs natifs WordPress (éditeur Gutenberg)**, **sans extensions supplémentaires**, afin de garantir simplicité, stabilité et compatibilité maximale.
 
 - 📆 **Date** : Avril 2025  
 - 🏢 **Réalisation** : ESN Stesio  
@@ -12,123 +11,190 @@ Documentation technique du site WordPress
 
 ## 📚 Sommaire
 
-1. [Présentation du projet](#-présentation-du-projet)
-2. [Installation de WordPress](#-installation-de-wordpress)
-   - [Prérequis](#prérequis)
-   - [Installation en ligne (WordPress.com)](#installation-en-ligne-wordpresscom)
-   - [Installation en local (srv-lamp)](#installation-en-local-srv-lamp)
-3. [Extensions WordPress](#-extensions-wordpress)
-4. [Navigation et structure du site](#-navigation-et-structure-du-site)
-5. [Gestion des rôles et accès](#-gestion-des-rôles-et-accès)
-6. [Ajouter un voyage ou une antenne](#-ajouter-un-voyage-ou-une-antenne)
-7. [Support et contact](#-support-et-contact)
+- Présentation du projet  
+- Installation de WordPress  
+- Utilisation des blocs WordPress  
+- Structure du site  
+- Navigation et menus  
+- Gestion des rôles  
+- Ajouter un voyage ou une antenne  
+- Support et contact  
 
 ---
 
 ## 🎯 Présentation du projet
 
-Le projet **WorldTour** consiste à mettre en place un site **WordPress** pour une agence de voyage nationale.  
-Le site est disponible :
+Le projet **WorldTour** vise à présenter :
+- l’agence nationale,
+- ses antennes locales,
+- les voyages proposés,
+via un site WordPress clair, structuré et facilement maintenable.
 
-- ✅ **En ligne** via WordPress.com (vitrine publique)
-- ✅ **En local** sur un serveur `srv-lamp` pour les tests et développements
-
-👉 Toute modification doit être **testée en local** avant publication en ligne.
+✅ Le site a été réalisé **sans plugins fonctionnels**, uniquement à l’aide :
+- de l’éditeur **Gutenberg**,
+- des **blocs WordPress par défaut**,
+- et des fonctionnalités natives de WordPress.com.
 
 ---
 
 ## ⚙️ Installation de WordPress
 
+Le projet est disponible :
+- **en ligne** via WordPress.com (site public),
+- **en local** sur un serveur `srv-lamp` pour les tests.
+
 ### Prérequis
 
-| Équipement | Détail |
-|-----------|-------|
-| Navigateur | Chrome, Firefox ou Edge (version récente) |
-| Accès Internet | Requis pour la version en ligne |
-| Serveur local | `srv-lamp` – Apache / PHP / MySQL |
-| Client FTP | WinSCP |
-| Client SSH | PuTTY |
-| Identifiants | ga26 → gh26 (mot de passe = identifiant) |
+| Élément | Détail |
+|------|------|
+| Navigateur | Chrome / Firefox / Edge |
+| Serveur local | Apache + PHP + MySQL |
+| Accès Internet | Requis pour WordPress.com |
+| Outils | WinSCP, PuTTY |
 
 ---
 
 ### Installation en ligne (WordPress.com)
 
-🌐 **URL du site** : https://blog27143.wordpress.com/
+🌐 Site : https://blog27143.wordpress.com/
 
-#### Étapes
-1. Accéder à https://wordpress.com
-2. Cliquer sur **Commencer**
-3. Créer un compte (email, utilisateur, mot de passe)
-4. Choisir le **plan gratuit**
-5. Nommer le site (`worldtour-agence`)
-6. Valider l’email
-7. Accéder au tableau de bord
+1. Créer un compte sur https://wordpress.com  
+2. Choisir le **plan gratuit**  
+3. Créer le site *WorldTour*  
+4. Accéder au tableau de bord  
 
-> 💡 Le site en ligne sert de **vitrine publique uniquement**
+> 💡 Le site en ligne sert de **vitrine officielle**.
 
 ---
 
 ### Installation en local (srv-lamp)
 
-#### Configuration proxy
-Ajouter une **exception proxy** pour le domaine `srv-lamp` depuis les paramètres réseau du navigateur.
-
-#### Connexion SSH
-- Hôte : `srv-lamp` ou `192.168.1.103`
-- Port : `22`
-- Type : SSH
-- Client : PuTTY
+- Accès : `http://srv-lamp/~identifiant/`
+- Base de données : `identifiant_wp`
+- Serveur BDD : `localhost`
 
 ⚠️ **Important**  
-Le mot de passe administrateur WordPress ne peut **pas être réinitialisé**.  
-👉 Note‑le immédiatement (ex : Trello).
-
-#### Installation WordPress
-1. Connexion WinSCP vers `srv-lamp`
-2. Dossier : `public_html/wordpress/`
-3. Accéder à :  
-   `http://srv-lamp/~ga26/`
-4. Configuration :
-   - Base : `ga26_wp`
-   - Utilisateur BDD : identifiant équipe
-   - Mot de passe : identifiant équipe
-   - Serveur : `localhost`
-   - Préfixe : `wp_`
-
-✅ Installation terminée
-
-#### Base de données
-- phpMyAdmin : http://srv-lamp/phpmyadmin/
+Le mot de passe administrateur WordPress ne peut **pas être réinitialisé**.
 
 ---
 
-## 🔌 Extensions WordPress
+## 🧱 Utilisation des blocs WordPress (Gutenberg)
 
-### Extensions utilisées
+Le site utilise **uniquement les blocs natifs** :
 
-| Extension | Utilité |
-|--------|--------|
-| Yet Another Stars Rating | Notation par étoiles |
-| Easy Pricing Tables | Grilles tarifaires |
-| Contact Form 7 | Formulaire de contact |
-| Envira Gallery | Galerie photos |
+### Blocs utilisés
+
+| Bloc WordPress | Utilisation |
+|-------------|-------------|
+| Paragraphe | Textes descriptifs |
+| Titre | Hiérarchisation du contenu |
+| Image | Visuels des voyages / antennes |
+| Galerie | Photos des destinations |
+| Colonnes | Mise en page structurée |
+| Boutons | Liens vers voyages / contact |
+| Liste | Services, employés, départs |
+| Tableau | Tarifs des voyages |
+| Formulaire de contact | Bloc WordPress.com |
+
+✅ Aucun plugin requis  
+✅ Interface stable et légère  
+✅ Compatible WordPress.com
 
 ---
 
-### Installation d’une extension
-1. Tableau de bord → Extensions → Ajouter
-2. Rechercher l’extension
-3. Installer → Activer
-4. Configurer
+## 🧭 Structure du site
+
+### Architecture générale
+
+- **Accueil**
+- **Nos Antennes**
+  - Tarbes
+  - Toulouse
+  - Auch
+- **Nos Voyages**
+  - Dubaï
+  - Islande
+  - République Dominicaine
+- **Contact**
 
 ---
 
-### Configuration clé
+### Pages Antennes
 
-#### ⭐ Yet Another Stars Rating (YASR)
-- 5 étoiles
-- Votes visiteurs activés
-- Shortcode :
-```text
-[yasr_visitor_votes size="medium" readonly="no"]
+Chaque antenne comprend :
+- une présentation de la ville,
+- les responsables,
+- les employés (par rôle),
+- une mise en page en blocs colonnes & images.
+
+---
+
+### Pages Voyages
+
+Chaque page voyage contient :
+- une présentation complète,
+- une galerie photo (bloc Galerie),
+- un **tableau de tarifs** (bloc Tableau),
+- les durées (4j / 7j / 15j),
+- les lieux de départ,
+- un formulaire de contact.
+
+---
+
+## 🧭 Menus de navigation
+
+Le menu principal est configuré via :
+
+**Apparence → Menus**
+
+- Accueil
+- Nos Antennes (menu déroulant)
+- Nos Voyages (menu déroulant)
+- Contact
+
+---
+
+## 👥 Gestion des rôles
+
+| Rôle | Accès |
+|----|----|
+| Administrateur | Gestion complète du site |
+| Éditeur WorldTour | Modification du contenu |
+
+Création d’un compte :
+`Tableau de bord → Utilisateurs → Ajouter`
+
+---
+
+## ➕ Ajouter un voyage ou une antenne
+
+### Ajouter un voyage
+
+1. Dupliquer un modèle de page existant  
+2. Modifier le contenu avec les blocs :
+   - Titre
+   - Paragraphe
+   - Galerie
+   - Tableau
+3. Associer la page à **Nos Voyages**
+4. Publier
+
+---
+
+### Ajouter une antenne
+
+1. Dupliquer une page antenne existante  
+2. Modifier les informations (ville, employés)  
+3. Ajouter au menu **Nos Antennes**
+4. Publier
+
+---
+
+## 🛟 Support et contact
+
+- 📧 **Contact ESN Stesio** : f.bravais@gmail.com  
+- 📚 Documentation WordPress : https://fr.wordpress.org/support/  
+
+---
+
+_Documentation officielle — Projet WorldTour_ by Reynaud Marlon and Guillermin Egido Esteban
