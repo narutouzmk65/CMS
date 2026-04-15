@@ -1,222 +1,274 @@
-# 🌍 WorldTour — README (TP WordPress) | Guide simple + technique
+# 🌍 WorldTour — TP WordPress
+**Découverte et mise en œuvre d’un système de gestion de contenus (CMS)**
 
-Site WordPress du projet **WorldTour** (agence de voyage nationale).  
-➡️ Site en ligne : https://blog27143.wordpress.com/  
+🔗 Site en ligne : https://blog27143.wordpress.com/
 
-📌 Ce README sert de **documentation de TP** : il explique **comment accéder au site**, **comprendre la structure**, et **mettre à jour le contenu**.
-
-> ⚠️ Important : sur ce TP, le contenu est géré **avec les blocs WordPress (éditeur)**.  
-> Les manipulations décrites ci-dessous restent valables même si on n’est pas “informatique”.
+Ce fichier constitue **l’unique documentation officielle du projet WorldTour**.  
+Il répond intégralement au **sujet de TP “Système de gestion de contenus”**, au **cahier des charges**, et décrit **le site WordPress tel qu’il est réellement implémenté**.
 
 ---
 
-## 📚 Sommaire (cliquable)
+## 📚 Sommaire
 
-- [1. Objectif du TP](#1-objectif-du-tp)
-- [2. Prérequis](#2-prérequis)
+- [1. Contexte et objectifs du projet](#1-contexte-et-objectifs-du-projet)
+- [2. Présentation générale du site WorldTour](#2-présentation-générale-du-site-worldtour)
 - [3. Accès au site](#3-accès-au-site)
-  - [3.1 Site en ligne (WordPress.com)](#31-site-en-ligne-wordpresscom)
-  - [3.2 Site local (srv-lamp)](#32-site-local-srv-lamp)
-- [4. Structure du site WorldTour (pages et menus)](#4-structure-du-site-worldtour-pages-et-menus)
-  - [4.1 Pages principales](#41-pages-principales)
-  - [4.2 Menu de navigation](#42-menu-de-navigation)
-  - [4.3 Rôles et accès](#43-rôles-et-accès)
-- [5. Mettre à jour le contenu (avec les blocs)](#5-mettre-à-jour-le-contenu-avec-les-blocs)
-  - [5.1 Modifier une page existante](#51-modifier-une-page-existante)
-  - [5.2 Ajouter un nouveau voyage](#52-ajouter-un-nouveau-voyage)
-  - [5.3 Ajouter une nouvelle antenne](#53-ajouter-une-nouvelle-antenne)
-- [6. Points d’attention (erreurs fréquentes)](#6-points-dattention-erreurs-fréquentes)
-- [7. Support](#7-support)
+  - [3.1 Version en ligne](#31-version-en-ligne)
+  - [3.2 Version locale (srv-lamp)](#32-version-locale-srv-lamp)
+- [4. Architecture globale du site](#4-architecture-globale-du-site)
+  - [4.1 En-tête (Header)](#41-en-tête-header)
+  - [4.2 Pied de page (Footer)](#42-pied-de-page-footer)
+- [5. Pages et composantes du site](#5-pages-et-composantes-du-site)
+  - [5.1 Page Accueil](#51-page-accueil)
+  - [5.2 Pages Antennes](#52-pages-antennes)
+  - [5.3 Pages Voyages](#53-pages-voyages)
+  - [5.4 Page Contact](#54-page-contact)
+- [6. Modèles de pages (pages vierges)](#6-modèles-de-pages-pages-vierges)
+- [7. Navigation et menus](#7-navigation-et-menus)
+- [8. Gestion des accès et des rôles](#8-gestion-des-accès-et-des-rôles)
+- [9. Modification et maintenance du site](#9-modification-et-maintenance-du-site)
+  - [9.1 Modifier une page existante](#91-modifier-une-page-existante)
+  - [9.2 Ajouter un nouveau voyage](#92-ajouter-un-nouveau-voyage)
+  - [9.3 Ajouter une nouvelle antenne](#93-ajouter-une-nouvelle-antenne)
+- [10. Bonnes pratiques et erreurs à éviter](#10-bonnes-pratiques-et-erreurs-à-éviter)
+- [11. Critères d’évaluation](#11-critères-dévaluation)
+- [12. Support et ressources](#12-support-et-ressources)
 
 ---
 
-## 1. Objectif du TP
+## 1. Contexte et objectifs du projet
 
-Ce TP consiste à :
-- mettre en place un site WordPress WorldTour (en ligne + en local),
-- organiser les pages (antennes / voyages),
-- permettre des mises à jour simples du contenu (textes, photos, tarifs),
-- publier proprement une vitrine d’agence de voyage.
+WorldTour est une **agence de voyage nationale** proposant des **circuits touristiques organisés**.  
+Jusqu’à présent, chaque antenne disposait de son propre site, ce qui ne correspondait plus à l’image souhaitée par l’agence.
+
+Le projet a pour objectif de :
+- centraliser l’ensemble des voyages sur une **plateforme unique**,
+- proposer un **site vitrine simple à maintenir**,
+- permettre à l’agence de modifier le contenu **sans compétence technique**.
+
+La solution retenue est **WordPress**, utilisé comme **CMS**.
 
 ---
 
-## 2. Prérequis
+## 2. Présentation générale du site WorldTour
 
-Avant de commencer, il faut avoir :  
-- un navigateur récent (Chrome, Firefox ou Edge)  
-- un accès Internet (pour la version en ligne)  
-- un serveur local **srv-lamp** (IP : 192.168.1.103) avec Apache/PHP/MySQL  
-- WinSCP (accès sFTP) et PuTTY (accès SSH)  
-- des identifiants d’équipe (ga26 à gh26, mot de passe = identifiant par défaut)  
+Le site WorldTour est un **site vitrine WordPress** composé :
+- d’une page de présentation de l’agence,
+- d’une page par antenne,
+- d’une page par voyage,
+- d’une page contact.
+
+L’ensemble du contenu est géré via **l’éditeur de blocs WordPress (Gutenberg)**.
 
 ---
 
 ## 3. Accès au site
 
-### 3.1 Site en ligne (WordPress.com)
+### 3.1 Version en ligne
 
-Le site public du projet est accessible ici :  
-https://blog27143.wordpress.com/
+👉 https://blog27143.wordpress.com/
 
-➡️ La version en ligne sert de **vitrine** : on y publie la version “propre”.  
-💡 Conseil TP : tester d’abord en local, puis publier en ligne.
-
----
-
-### 3.2 Site local (srv-lamp)
-
-La version locale sert à travailler / tester sans casser le site public.
-
-#### a) Configuration proxy (si nécessaire)
-Pour accéder à `srv-lamp` depuis un poste, il peut être nécessaire d’ajouter une **exception proxy** pour le domaine `srv-lamp` dans les paramètres réseau du navigateur.
-
-#### b) Connexion au serveur (SSH)
-1. Ouvrir **PuTTY**
-2. Dans “Host Name” : `srv-lamp` ou `192.168.1.103`
-3. Port : `22` | Type : `SSH`
-4. “Open”
-5. Se connecter avec l’identifiant d’équipe
-
-⚠️ Note TP important : changer le mot de passe avec la commande :
-`passwd`
-
-> ⚠️ Attention : le mot de passe administrateur WordPress ne peut pas être réinitialisé.  
-> Il doit être noté immédiatement (ex : Trello).
-
-#### c) Lancer l’installation WordPress en local
-1. Se connecter en sFTP avec **WinSCP**
-2. Aller dans : `public_html/wordpress/`
-3. Ouvrir le navigateur et aller sur :  
-   `http://srv-lamp/~ga26/` (remplacer `ga26` par l’identifiant)
-
-Ensuite, l’assistant WordPress s’affiche :
-- Langue : Français
-- Base de données :
-  - Nom : `ga26_wp` (selon identifiant)
-  - Identifiant : identifiant d’équipe
-  - Mot de passe : mot de passe d’équipe
-  - Serveur : `localhost`
-  - Préfixe : `wp_` (par défaut)
-
-✅ Une fois terminé, WordPress est installé.
-
-#### d) Accès base de données (si besoin TP)
-phpMyAdmin :  
-`http://srv-lamp/phpmyadmin/`
+- Site public
+- Version finale
+- Accessible à tout utilisateur
 
 ---
 
-## 4. Structure du site WorldTour (pages et menus)
+### 3.2 Version locale (srv-lamp)
 
-### 4.1 Pages principales
+Serveur : `srv-lamp` ou `192.168.1.103`
 
-Le site est organisé en pages “logiques” :
-
-- **Accueil** : présentation générale de l’agence
-- **Antennes** :
-  - Antenne Tarbes
-  - Antenne Toulouse
-  - Antenne Auch  
-  (présentation, responsables, employés, informations)
-- **Les Voyages** : liste de toutes les destinations
-  - Dubaï
-  - Islande
-  - République Dominicaine  
-  (description, photos, tarifs, départs, contact)
-- **Contact** : page utile pour joindre l’agence
+Accès navigateur :
+http://srv-lamp/~ga26/
+La version locale permet :
+- les tests,
+- la modification sans risque,
+- l’expérimentation avant publication.
 
 ---
 
-### 4.2 Menu de navigation
+## 4. Architecture globale du site
 
-Le menu est réglé dans :  
+### 4.1 En-tête (Header)
+
+Présent sur toutes les pages :
+- Nom du site **WorldTour**
+- Menu de navigation principal
+- Adaptation mobile / ordinateur
+
+---
+
+### 4.2 Pied de page (Footer)
+
+Présent sur toutes les pages :
+- Informations générales
+- Cohérence graphique
+- Structure simple
+
+---
+
+## 5. Pages et composantes du site
+
+### 5.1 Page Accueil
+
+Contenu :
+- Présentation générale de WorldTour
+- Texte descriptif
+- Images illustratives
+- Mise en avant des voyages et antennes
+
+Blocs utilisés :
+- Titre
+- Paragraphe
+- Image
+
+---
+
+### 5.2 Pages Antennes
+
+Antennes présentes :
+- Tarbes
+- Toulouse
+- Auch
+
+Structure d’une antenne :
+- Nom de la ville
+- Coordonnées
+- Responsables
+- Employés par rôle
+- Images
+- Description
+
+Toutes les antennes utilisent **le même modèle de page**.
+
+---
+
+### 5.3 Pages Voyages
+
+Voyages disponibles :
+- Islande
+- Dubaï
+- République Dominicaine
+
+Chaque page voyage contient obligatoirement :
+- Descriptif du voyage
+- Galerie photos (minimum 4 images)
+- Tableau des tarifs :
+  - seul / couple / famille
+  - durée : 4, 7, 15 jours
+- Lieux de départ
+- Invitation à contacter l’agence
+
+---
+
+### 5.4 Page Contact
+
+- Informations de contact
+- Texte explicatif
+- Moyen de prise de contact
+
+---
+
+## 6. Modèles de pages (pages vierges)
+
+Des pages modèles permettent :
+- l’ajout rapide de nouveaux voyages,
+- l’ajout de nouvelles antennes,
+- une cohérence sur l’ensemble du site.
+
+---
+
+## 7. Navigation et menus
+
+Configuration :
 **Apparence > Menus**
 
-Il contient généralement :
+Menu principal :
 - Accueil
-- Nos Antennes (menu déroulant)
-- Nos Voyages (menu déroulant)
+- Nos Antennes
+  - Tarbes
+  - Toulouse
+  - Auch
+- Nos Voyages
+  - Islande
+  - Dubaï
+  - République Dominicaine
 - Contact
 
-➡️ But TP : que l’utilisateur trouve tout en 2 clics max.
+Objectif : **accès en 2 clics maximum**.
 
 ---
 
-### 4.3 Rôles et accès
+## 8. Gestion des accès et des rôles
 
-Deux rôles simples :
-- **Administrateur** : accès complet (installation, configuration)
-- **Éditeur WorldTour** : modification du contenu (pages, textes, photos)
-
-Création d’un compte éditeur :  
-Tableau de bord > Utilisateurs > Ajouter > Rôle : Éditeur
+- **Administrateur**
+  - Accès complet
+  - Réservé à l’ESN Stesio
+- **Éditeur WorldTour**
+  - Modification du contenu uniquement
 
 ---
 
-## 5. Mettre à jour le contenu (avec les blocs)
+## 9. Modification et maintenance du site
 
-Le site se modifie via des “blocs” (texte, image, galerie, tableau…).  
-➡️ On clique sur un bloc → on modifie → on met à jour la page.
-
-### 5.1 Modifier une page existante
+### 9.1 Modifier une page existante
 
 1. Tableau de bord WordPress
-2. **Pages > Toutes les pages**
-3. Cliquer sur la page (ex : “Islande”)
-4. Modifier le texte / photo / tableau
-5. Cliquer sur **Mettre à jour** (ou Publier)
-
-✅ La modification est enregistrée.
+2. Pages > Toutes les pages
+3. Ouvrir la page
+4. Modifier les blocs
+5. Cliquer sur **Mettre à jour**
 
 ---
 
-### 5.2 Ajouter un nouveau voyage
+### 9.2 Ajouter un nouveau voyage
 
-Méthode TP conseillée (simple + propre) :
-1. Pages > Toutes les pages
-2. Ouvrir une page voyage existante (ex : Dubaï)
-3. Dupliquer / recréer sur le même modèle
-4. Remplacer :
-   - titre (nom du pays)
-   - descriptif
-   - galerie photo (minimum 4 photos)
-   - tarifs (tableau)
-   - lieux de départ
-5. Vérifier la mise en page
-6. Publier
-7. Ajouter le voyage dans le menu “Nos Voyages”
-
-💡 Conseil : garder la même structure pour tous les voyages.
-
----
-
-### 5.3 Ajouter une nouvelle antenne
-
-1. Pages > Toutes les pages
-2. Dupliquer une antenne existante (ex : Tarbes)
-3. Remplacer :
-   - nom de la ville
-   - adresse / contact
-   - responsables
-   - employés
-   - photos
+1. Dupliquer un voyage existant
+2. Modifier le titre, le texte, les images
+3. Adapter le tableau des tarifs
 4. Publier
-5. Ajouter l’antenne dans “Nos Antennes” (menu)
+5. Ajouter le voyage au menu
 
 ---
 
-## 6. Points d’attention (erreurs fréquentes)
+### 9.3 Ajouter une nouvelle antenne
 
-- ✅ Toujours cliquer sur **Mettre à jour** avant de quitter
-- ❌ Ne pas supprimer une page si on n’est pas sûr
-- ✅ Garder une structure identique entre voyages (plus facile à maintenir)
-- ✅ Tester en local si possible avant de modifier le site en ligne
-- ⚠️ Les mots de passe doivent être notés : pas de réinitialisation admin facile
+1. Dupliquer une antenne existante
+2. Modifier les informations
+3. Publier
+4. Ajouter au menu
 
 ---
 
-## 7. Support
+## 10. Bonnes pratiques et erreurs à éviter
 
-Documentation WordPress : https://fr.wordpress.org/support/  
-Contact projet : f.bravais@gmail.com
+- Toujours enregistrer avec **Mettre à jour**
+- Ne pas supprimer une page sans certitude
+- Garder une structure identique
+- Tester en local avant publication
+- Noter soigneusement le mot de passe administrateur
 
+---
+
+## 11. Critères d’évaluation
+
+### Documentation (8 points)
+- Précision et complétude
+- Clarté
+- Qualité rédactionnelle
+
+### Site WordPress (12 points)
+- Pages attendues complètes
+- Qualité des contenus
+- Esthétique
+- Convivialité
+
+---
+
+## 12. Support et ressources
+
+📖 Documentation WordPress :  
+https://fr.wordpress.org/support/
+
+📧 Contact projet :  
+f.bravais@gmail.com
